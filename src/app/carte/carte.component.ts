@@ -1,5 +1,4 @@
-import { Component, OnInit } from "@angular/core";
-import { PokemonService } from "../service/pokemon.service";
+import { Component, OnInit, OnChanges,Input, Output, EventEmitter } from "@angular/core";
 import { Pokemon } from "../interfaces/pokemon";
 
 @Component({
@@ -40,17 +39,11 @@ export class CarteComponent implements OnInit {
       __v: 0
     }
   ];
+  */
+
+  @Input() data: Pokemon;
 
   constructor() {}
 
   ngOnInit() {}
-  */
-
-  data: Pokemon;
-  constructor(private pokemonService: PokemonService) {}
-
-  async ngOnInit() {
-    this.data = await this.pokemonService.pokemon("7");
-    console.log(this.data);
-  }
 }
